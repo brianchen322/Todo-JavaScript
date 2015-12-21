@@ -11,18 +11,25 @@ $(document).ready(function(){
 
 		// Découpe en plus petits lots.
 		// Cette ligne est trop longue et devient illisible.
+
+
+		// Attention, tu utilises un id (qui identifie de manière unique un élément)
+		// et tu le mets sur TOUS les nouveaux éléments !
+		// Dans ton cas, tu peux sélectionner les éléments de la liste grâce 
+		// à d'autres sélécteurs : name=elementsliste par exemple
 		var newElmt = '<div class="item">' 
-			+ '<input type="checkbox" name="elementsliste" id="checkboxID"/>'
-			+ '<button class="close">X</button>' + aAjouter + '</div>');
+			+ '<input type="checkbox" name="elementsliste" />'
+			+ '<button class="close">X</button>' + aAjouter + '</div>';
 
 		$('.applicationToDoList').append(newElmt);
 		calcul();
 	});
 
-	
-	$('.applicationToDoList').on('click','#checkboxID',function(){
+	// Par rapport à l'id, on le maj ici. 
+	// Avec le #id, je comprends que tu identifies un seul et unique élément.
+	// Or, tu voulais dire 'n'imporque quel élémént de la liste'
+	$('.applicationToDoList').on('click','input[name=elementsliste]',function(){
 		$(this).parent('.item').toggleClass('barre');
-
 		calcul();
 
 	});
@@ -33,7 +40,13 @@ $(document).ready(function(){
 		calcul();
 	});
 
-
+	/*
+		Fonctions des boutons liés au dashboard
+		- show all
+		- show only active
+		- show only completed
+		- cealr completed
+	*/
 	$('#all').click(function(){
 		$('.item').show();
 	});
@@ -54,7 +67,7 @@ $(document).ready(function(){
 	});
 
 
-
+	// To update counter
 	function calcul() {
 		var compteur =$('.item:not(.barre)').length;
 		if(compteur <=1){
