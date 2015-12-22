@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-	<meta charset="UTF-8">
-	<title>ToDo</title>
-	<script type= "text/javascript" src="jquery-2.1.4.js"></script>
-	<script type= "text/javascript" src="app.js"></script>
-	<link rel="stylesheet" href="style.css">
-</head>
+	<!-- Indentation ! -->
+	<head>
+		<meta charset="UTF-8">
+		<title>ToDo</title>
+		
 
-<body>
-	<h1>MY TO DO LIST</h1>
+<!-- 		Regroupement des CSS -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+		
+		<!-- Les js sont juste avant la balise </body> afin d'optimiser le temps de chargement
+		de la page. -->
+
+	</head>
+
+	<body>
+		<!-- 
+		Code claire et concis.
+		Je comprends bien les différentes parties. -->
+		<h1>MY TO DO LIST</h1>
+			<!-- Indentation -->
 			<form name="todolist">
 				<input type="text" name="newelements" placeholder="What needs to be done ? ..." id="titre"/>
 			</form>
 			
 			<div class="applicationToDoList"></div>
-					
+						
+			
+			<div class="part">
+
+				<p class="itemleft">item left</p>
+				<p><button id="all">all</button></p>
+				<p><button id="active">active</button></p>
+				<p><button id="completed">completed</button></p>
+				<p><button id="clearcompleted">clear completed</button></p>
+			</div>
+
+			<footer>
+				<blockquote>&copy; Marie Sochala</blockquote>
+			</footer>
 		
-		<div class="part">
-
-			<p class="itemleft">item left</p>
-			<p><button id="all">all</button></p>
-			<p><button id="active">active</button></p>
-			<p><button id="completed">completed</button></p>
-			<p><button id="clearcompleted">clear completed</button></p>
-		</div>
-
-		<footer>
-			<blockquote>&copy; Marie Sochala</blockquote>
-		</footer>
-	
-</body>
+		<script type= "text/javascript" src="js/jquery-2.1.4.js"></script>
+		<script type= "text/javascript" src="js/app.js"></script>
+		
+	</body>
 
 </html>
